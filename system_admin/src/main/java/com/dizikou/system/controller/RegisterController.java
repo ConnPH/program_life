@@ -9,11 +9,9 @@ import com.dizikou.system.model.vo.RegisterVo;
 import com.dizikou.system.service.IAuthenticationService;
 import com.dizikou.system.service.IUserEventLogService;
 import com.dizikou.system.service.IUserService;
-import com.dizikou.system.util.DateUilts;
+import com.dizikou.system.util.DateUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -65,7 +63,7 @@ public class RegisterController {
 
         UserEventLog userEventLog = new UserEventLog();
         userEventLog.setUserId(user.getId());
-        String[] ymd = DateUilts.getYMD();
+        String[] ymd = DateUtils.getYMD();
         userEventLog.setLoginDate(ymd[0]);
         userEventLog.setLoginTime(ymd[1]);
         userEventLog.setUserName(user.getUserName());
