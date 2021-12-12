@@ -72,8 +72,4 @@ public class RegisterController {
         return RestResponse.ok();
 
     }
-
-    public static void main(String[] args) {
-
-    }
 }
